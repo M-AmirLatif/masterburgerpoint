@@ -46,44 +46,46 @@ export function CartDrawer() {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 overflow-hidden">
+        <div className="fixed inset-0 z-[70] overflow-hidden">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={closeCart}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
+            className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity"
             aria-hidden="true"
           />
 
-          <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
+          <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 350, damping: 32 }}
-              className="w-screen max-w-md bg-[#FFFDF7] shadow-2xl flex flex-col border-l border-[#8B1A1A]/10"
+              className="w-screen max-w-md bg-[#FFFDF7] shadow-2xl flex flex-col border-l border-[#8B1A1A]/10 relative z-10"
             >
               {/* Header */}
-              <div className="px-5 py-4 bg-[#8B1A1A] text-white flex items-center justify-between shadow-md">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#FFC20E] text-[#8B1A1A] flex items-center justify-center font-bold">
+              <div className="px-4 sm:px-5 py-4 bg-[#8B1A1A] text-white flex items-center justify-between shadow-md">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#FFC20E] text-[#8B1A1A] flex items-center justify-center font-bold shrink-0">
                     <ShoppingBag className="w-5 h-5" />
                   </div>
-                  <div>
-                    <h2 className="text-xl font-display tracking-wide flex items-center gap-2">
-                      Your Feast Bag
-                      <span className="text-xs font-sans font-bold px-2 py-0.5 rounded-full bg-[#FFC20E] text-[#8B1A1A]">
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2">
+                      <h2 className="text-lg sm:text-xl font-display tracking-wide truncate">
+                        Your Feast Bag
+                      </h2>
+                      <span className="text-[11px] font-sans font-bold px-2 py-0.5 rounded-full bg-[#FFC20E] text-[#8B1A1A] whitespace-nowrap shrink-0">
                         {items.reduce((acc, i) => acc + i.quantity, 0)} items
                       </span>
-                    </h2>
-                    <p className="text-xs text-white/80 font-medium">Master Burger Point • Railway Road, Kasur</p>
+                    </div>
+                    <p className="text-xs text-white/80 font-medium truncate">Master Burger Point • Railway Road, Kasur</p>
                   </div>
                 </div>
                 <button
                   onClick={closeCart}
-                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors cursor-pointer"
+                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors cursor-pointer shrink-0 ml-2"
                   aria-label="Close cart drawer"
                 >
                   <X className="w-5 h-5" />
@@ -154,7 +156,7 @@ export function CartDrawer() {
                     <div>
                       <h3 className="text-lg font-display text-[#141414]">Your Bag is Empty!</h3>
                       <p className="text-xs text-[#5C4E4B] max-w-xs mt-1">
-                        Hungry? Explore our juicy Beef Smash Burgers, Injected Broast, or Chicago Deep Dish Pizza!
+                        Hungry? Explore our Special Master Burgers, Bun Plaster, Zinger, Shawarma, and loaded fries!
                       </p>
                     </div>
                     <button

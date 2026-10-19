@@ -18,6 +18,14 @@ const SIGNATURE_IDS = [
   "injected-broast",
 ];
 
+const ITEM_HIGHLIGHTS: Record<string, string[]> = {
+  "special-master-burger": ["Double Juicy Patty", "Cheddar Cheese", "Farm Fresh Egg"],
+  "bun-plaster-burger": ["Kasuri Tawa Style", "Golden Egg Crust", "Tangy Chutney"],
+  "zinger-burger": ["Whole Chicken Fillet", "Fiery Crispy Batter", "Garlic Mayo"],
+  "zinger-chicken-mix-platter": ["Zinger & Roasted Chicken", "2 Pita Breads", "Garlic Dip & Fries"],
+  "golu-molu-club-sandwich": ["Triple Decker Jumbo", "Melted Cheese", "Fresh Salad Slaw"],
+};
+
 export function BestSellers() {
   const { addItem, showToast } = useCartStore();
   const [selectedSizes, setSelectedSizes] = useState<Record<string, string>>({});
@@ -152,13 +160,13 @@ export function BestSellers() {
                     <h3 className="text-lg font-extrabold text-[#141414] group-hover:text-[#8B1A1A] transition-colors leading-snug">
                       {item.name}
                     </h3>
-                    <p className="text-xs text-[#5C4E4B] line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-[#5C4E4B] leading-relaxed">
                       {item.description}
                     </p>
                   </div>
 
-                  {/* Size Selector if available */}
-                  {item.sizes && item.sizes.length > 1 && (
+                  {/* Size Selector if available, or Chef Highlights */}
+                  {item.sizes && item.sizes.length > 1 ? (
                     <div className="mt-3 pt-2.5 border-t border-gray-100">
                       <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider block mb-1.5">
                         Select Serving Size:
@@ -184,7 +192,23 @@ export function BestSellers() {
                         ))}
                       </div>
                     </div>
-                  )}
+                  ) : ITEM_HIGHLIGHTS[item.id] ? (
+                    <div className="mt-3 pt-2.5 border-t border-gray-100">
+                      <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider block mb-1.5">
+                        Chef Highlights:
+                      </label>
+                      <div className="flex flex-wrap gap-1.5">
+                        {ITEM_HIGHLIGHTS[item.id].map((chip) => (
+                          <span
+                            key={chip}
+                            className="inline-flex items-center px-2 py-0.5 rounded-md bg-[#FFF5D9] text-[#630F0F] text-[10px] font-semibold border border-[#E86014]/15"
+                          >
+                            • {chip}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ) : null}
                 </div>
 
                 {/* Bottom Row: Price & Add Button */}

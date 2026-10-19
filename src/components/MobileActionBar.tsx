@@ -5,12 +5,16 @@ import { Phone, ShoppingBag, Send } from "lucide-react";
 import { RESTAURANT_INFO } from "@/data/menu";
 
 export function MobileActionBar() {
-  const { getTotalCount, openCart, getFinalTotal } = useCartStore();
+  const { getTotalCount, openCart, getFinalTotal, isOpen } = useCartStore();
   const count = getTotalCount();
   const total = getFinalTotal();
 
   return (
-    <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#8B1A1A] text-white border-t-2 border-[#FFC20E] shadow-2xl px-3 py-2 flex items-center justify-between gap-2 safe-area-bottom">
+    <div
+      className={`md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#8B1A1A] text-white border-t-2 border-[#FFC20E] shadow-2xl px-3 py-2 flex items-center justify-between gap-2 safe-area-bottom transition-all duration-350 ease-out ${
+        isOpen ? "translate-y-full opacity-0 pointer-events-none" : "translate-y-0 opacity-100"
+      }`}
+    >
       {/* Quick Call */}
       <a
         href={`tel:${RESTAURANT_INFO.phonePrimary}`}

@@ -5,18 +5,33 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCartStore } from "@/lib/cartStore";
 import { getRestaurantStatus } from "@/lib/restaurantStatus";
-import { Menu, X, ShoppingBag, Phone, Send, Sparkles, Share2, Check } from "lucide-react";
+import {
+  Menu,
+  X,
+  ShoppingBag,
+  Phone,
+  Send,
+  Sparkles,
+  Share2,
+  Check,
+  Home,
+  UtensilsCrossed,
+  Tag,
+  Image as ImageIcon,
+  Star,
+  MapPin,
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { RESTAURANT_INFO } from "@/data/menu";
 import { SITE_URL } from "@/lib/siteUrl";
 
 const NAV_LINKS = [
-  { name: "Home", href: "/#home" },
-  { name: "Menu", href: "/menu" },
-  { name: "Deals", href: "/#deals" },
-  { name: "Gallery", href: "/#gallery" },
-  { name: "Reviews", href: "/#reviews" },
-  { name: "Visit & Contact", href: "/#contact" },
+  { name: "Home", href: "/#home", icon: Home },
+  { name: "Full Menu", href: "/menu", icon: UtensilsCrossed },
+  { name: "Special Deals", href: "/#deals", icon: Tag },
+  { name: "Food Gallery", href: "/#gallery", icon: ImageIcon },
+  { name: "Customer Reviews", href: "/#reviews", icon: Star },
+  { name: "Visit & Contact", href: "/#contact", icon: MapPin },
 ];
 
 export function Navbar() {
@@ -218,71 +233,116 @@ export function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Animated Drawer Menu */}
+      {/* Mobile Professional Sideway Vertical Drawer */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden fixed top-[60px] left-0 right-0 z-30 bg-[#FFFDF7] border-b-2 border-[#8B1A1A]/15 shadow-2xl overflow-hidden"
-          >
-            <div className="p-5 space-y-4">
-              {/* Timing Banner */}
-              <div className="flex items-center justify-between p-3 rounded-xl bg-[#FFF5D9] border border-[#FFC20E]/40 text-xs font-bold text-[#8B1A1A]">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>{status.badgeLabel} • Closes 4:00 AM</span>
-                </div>
-                <span className="text-[11px] text-[#630F0F]">Fast Delivery</span>
-              </div>
+          <div className="lg:hidden fixed inset-0 z-50 overflow-hidden">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity"
+              aria-hidden="true"
+            />
 
-              {/* Navigation Links */}
-              <div className="grid grid-cols-2 gap-2">
-                {NAV_LINKS.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
+            {/* Vertical Slide-in Drawer from Right */}
+            <div className="fixed inset-y-0 right-0 max-w-full flex">
+              <motion.aside
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ type: "spring", stiffness: 320, damping: 30 }}
+                className="w-[84vw] max-w-[320px] bg-[#FFFDF7] shadow-2xl flex flex-col border-l border-[#8B1A1A]/15 relative z-10 h-full"
+                aria-label="Mobile Navigation Drawer"
+              >
+                {/* Drawer Header */}
+                <div className="p-4 bg-white border-b border-[#8B1A1A]/10 flex items-center justify-between shadow-xs">
+                  <div className="relative w-36 h-9">
+                    <Image
+                      src="/logo.svg"
+                      alt="Master Burger Point"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <button
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="p-3 rounded-xl bg-white border border-[#8B1A1A]/10 text-sm font-bold text-[#141414] hover:bg-[#FFF5D9] hover:text-[#8B1A1A] transition-colors"
+                    className="p-2 rounded-xl bg-[#FFF5D9] hover:bg-[#FFEBB5] text-[#8B1A1A] transition-colors cursor-pointer"
+                    aria-label="Close navigation menu"
                   >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
 
-              {/* Quick Contacts & Sharing */}
-              <div className="pt-2 border-t border-[#8B1A1A]/10 flex flex-col gap-2">
-                <button
-                  onClick={handleShare}
-                  className="flex items-center justify-center gap-2 p-3 rounded-xl bg-white border border-[#FFC20E] text-[#8B1A1A] text-xs font-bold cursor-pointer hover:bg-[#FFF5D9] transition-colors"
-                >
-                  {copied ? (
-                    <Check className="w-4 h-4 text-emerald-600" />
-                  ) : (
-                    <Share2 className="w-4 h-4 text-[#8B1A1A]" />
-                  )}
-                  <span>{copied ? "Link Copied to Clipboard!" : "Share Link to WhatsApp / Chat"}</span>
-                </button>
-                <a
-                  href={`tel:${RESTAURANT_INFO.phonePrimary}`}
-                  className="flex items-center justify-center gap-2 p-3 rounded-xl bg-[#8B1A1A] text-white text-xs font-bold cursor-pointer"
-                >
-                  <Phone className="w-4 h-4 text-[#FFC20E]" />
-                  <span>Call {RESTAURANT_INFO.phonePrimary}</span>
-                </a>
-                <a
-                  href={RESTAURANT_INFO.whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 p-3 rounded-xl bg-[#25D366] text-white text-xs font-bold cursor-pointer"
-                >
-                  <Send className="w-4 h-4 fill-white" />
-                  <span>Order Directly on WhatsApp</span>
-                </a>
-              </div>
+                {/* Timing Status Pill */}
+                <div className="px-4 py-2.5 bg-[#FFF5D9] border-b border-[#FFC20E]/40 flex items-center justify-between text-xs font-bold text-[#8B1A1A]">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span>{status.badgeLabel} • Closes 4 AM</span>
+                  </div>
+                  <span className="text-[10px] text-[#630F0F] bg-white/80 px-2 py-0.5 rounded-md font-extrabold uppercase">
+                    Kasur
+                  </span>
+                </div>
+
+                {/* Vertical Navigation Links */}
+                <div className="flex-1 overflow-y-auto p-3.5 space-y-1.5">
+                  <div className="text-[10px] font-black uppercase tracking-wider text-[#8B1A1A]/60 px-3 py-1">
+                    Explore Menu & Info
+                  </div>
+                  {NAV_LINKS.map((link) => {
+                    const Icon = link.icon;
+                    return (
+                      <Link
+                        key={link.name}
+                        href={link.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="flex items-center gap-3 px-3.5 py-3 rounded-2xl bg-white border border-[#8B1A1A]/10 hover:border-[#8B1A1A]/30 hover:bg-[#FFF5D9] text-[#141414] hover:text-[#8B1A1A] font-bold text-sm transition-all shadow-xs group cursor-pointer"
+                      >
+                        <div className="w-8 h-8 rounded-xl bg-[#FFF5D9] group-hover:bg-[#8B1A1A] text-[#8B1A1A] group-hover:text-white flex items-center justify-center transition-colors shrink-0">
+                          <Icon className="w-4 h-4" />
+                        </div>
+                        <span>{link.name}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
+
+                {/* Drawer Footer Actions */}
+                <div className="p-4 border-t border-[#8B1A1A]/10 bg-white space-y-2 shrink-0">
+                  <button
+                    onClick={handleShare}
+                    className="w-full flex items-center justify-center gap-2 p-2.5 rounded-xl bg-[#FFFDF7] border border-[#FFC20E] text-[#8B1A1A] text-xs font-bold cursor-pointer hover:bg-[#FFF5D9] transition-colors"
+                  >
+                    {copied ? (
+                      <Check className="w-4 h-4 text-emerald-600" />
+                    ) : (
+                      <Share2 className="w-4 h-4 text-[#8B1A1A]" />
+                    )}
+                    <span>{copied ? "Link Copied to Clipboard!" : "Share Website"}</span>
+                  </button>
+                  <a
+                    href={`tel:${RESTAURANT_INFO.phonePrimary}`}
+                    className="w-full flex items-center justify-center gap-2 p-2.5 rounded-xl bg-[#8B1A1A] text-white text-xs font-bold cursor-pointer shadow-md active:scale-95 transition-all"
+                  >
+                    <Phone className="w-4 h-4 text-[#FFC20E]" />
+                    <span>Call {RESTAURANT_INFO.phonePrimary}</span>
+                  </a>
+                  <a
+                    href={RESTAURANT_INFO.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center gap-2 p-2.5 rounded-xl bg-[#25D366] text-white text-xs font-bold cursor-pointer shadow-md active:scale-95 transition-all"
+                  >
+                    <Send className="w-4 h-4 fill-white" />
+                    <span>WhatsApp Order</span>
+                  </a>
+                </div>
+              </motion.aside>
             </div>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
     </>

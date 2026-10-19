@@ -118,21 +118,21 @@ export function ContactSection() {
                 </div>
               </div>
 
-              <div className="space-y-2.5 text-xs divide-y divide-gray-100">
-                <div className="flex justify-between items-center pt-2">
+              <div className="space-y-2 text-xs">
+                <div className="flex items-center justify-between p-2.5 rounded-xl bg-[#FFFDF7] border border-[#8B1A1A]/10">
                   <span className="font-semibold text-gray-700">Monday – Sunday</span>
                   <span className="font-extrabold text-[#8B1A1A]">12:00 PM – 4:00 AM</span>
                 </div>
-                <div className="flex justify-between items-center pt-2.5">
+                <div className="flex items-center justify-between p-2.5 rounded-xl bg-[#FFFDF7] border border-[#8B1A1A]/10">
                   <span className="font-semibold text-gray-700">Home Delivery Hours</span>
                   <span className="font-extrabold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
                     12:00 PM – 4:00 AM
                   </span>
                 </div>
-                <div className="flex justify-between items-center pt-2.5">
-                  <span className="font-semibold text-gray-700">Fast Delivery</span>
-                  <span className="font-extrabold text-[#141414] bg-[#FFF5D9] px-2 py-0.5 rounded-md border border-[#FFC20E]/50">
-                    Dine-in • Takeout • Delivery
+                <div className="flex items-center justify-between p-2.5 rounded-xl bg-[#FFFDF7] border border-[#8B1A1A]/10">
+                  <span className="font-semibold text-gray-700">Service Options</span>
+                  <span className="font-extrabold text-[#8B1A1A] bg-[#FFF5D9] px-2 py-0.5 rounded-md border border-[#FFC20E]/40">
+                    Dine-In • Takeout • Delivery
                   </span>
                 </div>
               </div>
