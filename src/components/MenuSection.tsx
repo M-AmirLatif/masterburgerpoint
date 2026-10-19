@@ -75,7 +75,7 @@ export function MenuSection() {
         </div>
 
         {/* Sticky Search & Category Bar */}
-        <div className="sticky top-[68px] z-20 bg-[#FFFDF7]/95 backdrop-blur-md py-3 -mx-4 px-4 sm:mx-0 sm:px-0 border-y border-[#8B1A1A]/10 shadow-sm mb-8 space-y-3">
+        <div className="sticky top-[68px] z-20 bg-[#FFFDF7]/95 backdrop-blur-md py-3.5 px-3 sm:px-5 rounded-2xl border border-[#8B1A1A]/15 shadow-md mb-8 space-y-3">
           {/* Search Bar */}
           <div className="relative max-w-md mx-auto">
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -96,34 +96,34 @@ export function MenuSection() {
             )}
           </div>
 
-          {/* Category Chips with Animated Pill */}
-          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-2 sm:pb-0 scrollbar-none justify-start sm:justify-center">
-            {CATEGORIES.map((cat) => {
-              const isActive = activeCategory === cat.id;
-              return (
-                <button
-                  key={cat.id}
-                  onClick={() => {
-                    setActiveCategory(cat.id);
-                    setSearchQuery("");
-                  }}
-                  className={`relative px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
-                    isActive
-                      ? "text-[#FFFDF7]"
-                      : "text-[#630F0F] hover:text-[#8B1A1A] hover:bg-[#FFF5D9] bg-white border border-[#8B1A1A]/10"
-                  }`}
-                >
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeCategoryPill"
-                      className="absolute inset-0 bg-[#8B1A1A] rounded-full shadow-sm"
-                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                    />
-                  )}
-                  <span className="relative z-10">{cat.name}</span>
-                </button>
-              );
-            })}
+          {/* Category Chips Bar: Clean horizontal scroll with safe padding and no clipping */}
+          <div className="w-full overflow-x-auto pb-1 pt-0.5 scrollbar-none scroll-smooth">
+            <div className="flex items-center gap-2 min-w-max px-1">
+              {CATEGORIES.map((cat) => {
+                const isActive = activeCategory === cat.id;
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={(e) => {
+                      setActiveCategory(cat.id);
+                      setSearchQuery("");
+                      e.currentTarget.scrollIntoView({
+                        behavior: "smooth",
+                        inline: "center",
+                        block: "nearest",
+                      });
+                    }}
+                    className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-200 cursor-pointer shadow-xs active:scale-95 flex items-center gap-1.5 ${
+                      isActive
+                        ? "bg-[#8B1A1A] text-white shadow-md border border-[#8B1A1A]"
+                        : "bg-white text-[#4A3B32] hover:text-[#8B1A1A] hover:bg-[#FFF5D9] border border-[#8B1A1A]/15"
+                    }`}
+                  >
+                    <span>{cat.name}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
 
@@ -136,39 +136,36 @@ export function MenuSection() {
           {activeCategory !== "all" && (
             <button
               onClick={() => setActiveCategory("all")}
-              className="text-[#8B1A1A] hover:underline cursor-pointer"
+              className="text-[#8B1A1A] hover:underline cursor-pointer font-bold"
             >
               Reset Category
             </button>
           )}
         </div>
 
-        {/* Menu Items Grid */}
+        {/* Menu Items Grid: Silky smooth instant fade without grid thrashing */}
         <motion.div
-          layout
+          key={activeCategory + searchQuery}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.18, ease: "easeOut" }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
         >
-          <AnimatePresence>
-            {filteredItems.map((item) => {
-              const currentSize =
-                selectedSizes[item.id] || (item.sizes ? item.sizes[0].name : undefined);
-              const currentFlavour =
-                selectedFlavours[item.id] || (item.flavours ? item.flavours[0] : undefined);
+          {filteredItems.map((item) => {
+            const currentSize =
+              selectedSizes[item.id] || (item.sizes ? item.sizes[0].name : undefined);
+            const currentFlavour =
+              selectedFlavours[item.id] || (item.flavours ? item.flavours[0] : undefined);
 
-              const currentPrice = item.sizes
-                ? item.sizes.find((s) => s.name === currentSize)?.price || item.price
-                : item.price;
+            const currentPrice = item.sizes
+              ? item.sizes.find((s) => s.name === currentSize)?.price || item.price
+              : item.price;
 
-              return (
-                <motion.div
-                  layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.25 }}
-                  key={item.id}
-                  className="bg-white rounded-2xl p-3.5 border border-[#8B1A1A]/10 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group"
-                >
+            return (
+              <div
+                key={item.id}
+                className="bg-white rounded-2xl p-3.5 border border-[#8B1A1A]/10 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group"
+              >
                   <div>
                     {/* Item Image */}
                     <div
@@ -289,10 +286,9 @@ export function MenuSection() {
                       )}
                     </button>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
-          </AnimatePresence>
         </motion.div>
 
         {/* Empty Search Result Fallback */}
@@ -301,7 +297,7 @@ export function MenuSection() {
             <p className="text-4xl">🔍</p>
             <h3 className="text-lg font-bold text-[#141414]">No items found</h3>
             <p className="text-xs text-[#5C4E4B] max-w-sm mx-auto">
-              We couldn&apos;t find anything matching &quot;{searchQuery}&quot;. Try searching for &quot;smash&quot;, &quot;pizza&quot;, or &quot;broast&quot;.
+              We couldn&apos;t find anything matching &quot;{searchQuery}&quot;. Try searching for &quot;master&quot;, &quot;zinger&quot;, &quot;broast&quot;, or &quot;shawarma&quot;.
             </p>
             <button
               onClick={() => {
