@@ -88,9 +88,9 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Badges Bar: Clean, symmetrical responsive layout */}
-            <div className="w-full max-w-lg mx-auto lg:mx-0 pt-0.5">
-              <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center lg:justify-start gap-2">
+            {/* Badges Bar: Symmetrical on mobile, single seamless row on desktop */}
+            <div className="w-full max-w-md sm:max-w-xl lg:max-w-none mx-auto lg:mx-0 pt-0.5">
+              <div className="grid grid-cols-2 sm:flex sm:flex-row items-center justify-center lg:justify-start gap-2">
                 {/* Live Hours Badge */}
                 <div
                   className={`col-span-1 inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-extrabold shadow-sm ${
@@ -111,9 +111,9 @@ export function Hero() {
                 </div>
 
                 {/* Service Chip */}
-                <div className="col-span-2 sm:col-span-1 inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#8B1A1A] text-[#FFF6DC] text-[11px] sm:text-xs font-bold shadow-sm">
+                <div className="col-span-2 sm:col-span-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#8B1A1A] text-[#FFF6DC] text-[11px] sm:text-xs font-bold shadow-sm whitespace-nowrap">
                   <Truck className="w-3.5 h-3.5 text-[#FFC20E] shrink-0" />
-                  <span className="whitespace-nowrap">Dine-In • Takeout • Delivery</span>
+                  <span>Dine-In • Takeout • Delivery</span>
                 </div>
               </div>
             </div>

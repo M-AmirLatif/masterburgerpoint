@@ -16,6 +16,7 @@ export interface MenuItem {
   badge?: string;
   isSignature?: boolean;
   isBestSeller?: boolean;
+  isDeal?: boolean;
   spicyLevel?: 1 | 2 | 3;
 }
 
@@ -611,6 +612,47 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 280,
     image: "/images/deal-feast.jpg",
   },
+  // ===================== VALUE COMBO DEALS (ڈیلز) =====================
+  {
+    id: "deal-1",
+    name: "Deal 1 — Master Solo Crunch (ڈیل 1)",
+    category: "deals",
+    description: "1 Crispy Zinger Burger + 1 Portion Plain Fries + 1 Chilled Regular Drink. Perfect solo crunch meal.",
+    price: 520,
+    image: "/images/zinger-burger.jpg",
+    badge: "Solo Saver",
+    isDeal: true,
+  },
+  {
+    id: "deal-2",
+    name: "Deal 2 — Kasuri Classic Duo (ڈیل 2)",
+    category: "deals",
+    description: "1 Special Master Burger + 1 Bun Plaster Burger + 1 Masala Fries + 2 Chilled Regular Drinks. Serves 2.",
+    price: 1050,
+    image: "/images/smash-burger.jpg",
+    badge: "Oldest Favorites",
+    isDeal: true,
+  },
+  {
+    id: "deal-3",
+    name: "Deal 3 — Shawarma & Roll Fiesta (ڈیل 3)",
+    category: "deals",
+    description: "2 Chicken Shawarma (Large) + 1 Zinger Cheese Paratha Roll + 1 Mayo Fries + 1 Half-Litre Chilled Drink. Serves 2-3.",
+    price: 1280,
+    image: "/images/chicken-wrap.jpg",
+    badge: "Customer Favorite",
+    isDeal: true,
+  },
+  {
+    id: "deal-4",
+    name: "Deal 4 — Master Family Feast (ڈیل 4)",
+    category: "deals",
+    description: "2 Special Master Burgers + 1 Half Injected Broast (2 Pcs + 2 Rolls) + 1 Full Loaded Fries + 6 Nuggets + 1.5L Party Drink. Serves 4-5.",
+    price: 2650,
+    image: "/images/deal-feast.jpg",
+    badge: "Ultimate Feast",
+    isDeal: true,
+  },
 ];
 
 export const DEALS: DealItem[] = [
@@ -765,39 +807,33 @@ export const REVIEWS = [
 
 export const GALLERY_IMAGES = [
   {
-    title: "Master Burger Preparation",
+    title: "Special Master Burger",
+    category: "House Signature",
+    image: "/images/smash-burger.jpg",
+  },
+  {
+    title: "Master Kitchen Live Tawa Grilling",
     category: "Kitchen & Chef",
     image: "/images/gallery-chef.jpg",
-    span: "col-span-1 row-span-1",
   },
   {
-    title: "Official Burger Menu Card",
-    category: "Menu Card",
-    image: "/images/menu-cards/menu-burgers.jpg",
-    span: "col-span-1 md:col-span-2 row-span-1 md:row-span-2",
-  },
-  {
-    title: "Crispy Hot Wings & Broast",
+    title: "Crispy Golden Injected Broast",
     category: "Broast & Starters",
-    image: "/images/gallery-wings.jpg",
-    span: "col-span-1 row-span-1",
+    image: "/images/injected-broast.jpg",
   },
   {
-    title: "Chicken & Zinger Shawarma Platter",
-    category: "Shawarma",
+    title: "Sizzling Shawarma & Chicken Platter",
+    category: "Shawarma & Platters",
     image: "/images/gallery-platter.jpg",
-    span: "col-span-1 row-span-1",
   },
   {
-    title: "Official Shawarma & Rolls Menu",
-    category: "Menu Card",
-    image: "/images/menu-cards/menu-shawarma-rolls.jpg",
-    span: "col-span-1 row-span-1",
+    title: "Fiery Crispy Hot Wings",
+    category: "Starters & Wings",
+    image: "/images/gallery-wings.jpg",
   },
   {
-    title: "Official Sandwiches Menu",
-    category: "Menu Card",
-    image: "/images/menu-cards/menu-sandwiches.jpg",
-    span: "col-span-1 md:col-span-2 row-span-1",
+    title: "Golu Molu Club Sandwich & Golden Fries",
+    category: "Club Sandwiches",
+    image: "/images/club-sandwich.jpg",
   },
 ];

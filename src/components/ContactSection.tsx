@@ -137,25 +137,12 @@ export function ContactSection() {
                 </div>
               </div>
             </div>
-
-            {/* Restaurant Features Grid */}
-            <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
-              {RESTAURANT_INFO.features.map((feat, idx) => (
-                <div
-                  key={idx}
-                  className="p-2.5 sm:px-3 sm:py-2 rounded-xl bg-white border border-[#8B1A1A]/12 text-[11px] sm:text-xs font-bold text-[#141414] shadow-sm flex items-center gap-2"
-                >
-                  <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                  <span className="leading-snug">{feat}</span>
-                </div>
-              ))}
-            </div>
           </div>
 
-          {/* Right Column: Embedded Google Map & Directions */}
+          {/* Right Column: Embedded Google Map & Highlights */}
           <div className="lg:col-span-7 space-y-4">
             <div className="bg-white rounded-3xl p-3 sm:p-4 border border-[#8B1A1A]/10 shadow-xl overflow-hidden">
-              <div className="relative w-full h-[380px] sm:h-[450px] rounded-2xl overflow-hidden bg-gray-100">
+              <div className="relative w-full h-[320px] sm:h-[350px] rounded-2xl overflow-hidden bg-gray-100">
                 <iframe
                   title="Master Burger Point Kasur Railway Road Google Map"
                   src={RESTAURANT_INFO.googleMapEmbedUrl}
@@ -185,6 +172,24 @@ export function ContactSection() {
                   <Navigation className="w-4 h-4 text-[#FFC20E]" />
                   <span>Get Directions</span>
                 </a>
+              </div>
+            </div>
+
+            {/* Restaurant Features Grid: Balanced right under map */}
+            <div className="bg-white rounded-3xl p-4 border border-[#8B1A1A]/10 shadow-md">
+              <span className="text-[10px] font-black uppercase tracking-wider text-[#8B1A1A] block mb-2.5">
+                Why Master Burger Point Is Kasur&apos;s #1 Choice
+              </span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                {RESTAURANT_INFO.features.map((feat, idx) => (
+                  <div
+                    key={idx}
+                    className="p-2.5 rounded-xl bg-[#FFFDF7] border border-[#8B1A1A]/10 text-[11px] font-bold text-[#141414] shadow-xs flex items-center gap-2"
+                  >
+                    <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span className="leading-snug">{feat}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

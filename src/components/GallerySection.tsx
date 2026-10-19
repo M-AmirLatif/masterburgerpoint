@@ -26,7 +26,7 @@ export function GallerySection() {
             Master Burger Point Visual Gallery
           </h2>
           <p className="text-sm sm:text-base text-[#5C4E4B]">
-            A peek inside our kitchen, sizzling grills, authentic burger preparation, and official menu cards at Railway Road, Kasur.
+            A peek inside our kitchen, sizzling grills, authentic burger preparation, and freshly served specialties at Railway Road, Kasur.
           </p>
         </div>
 
