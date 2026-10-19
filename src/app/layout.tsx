@@ -68,12 +68,12 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${SITE_URL}/images/hero-food.jpg`,
-        secureUrl: `${SITE_URL}/images/hero-food.jpg`,
+        url: `${SITE_URL}/images/og-image.jpg`,
+        secureUrl: `${SITE_URL}/images/og-image.jpg`,
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "Master Burger Point Kasur — Special Burgers, Shawarma & Fast Food Spread",
+        alt: "Master Burger Point Kasur — The Oldest & Best Burger Shop",
       },
     ],
   },
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Master Burger Point Kasur | The Oldest Burger Shop",
     description: "Special Master Burgers, Bun Plaster, Shawarma & Late-Night Delivery till 4 AM.",
-    images: [`${SITE_URL}/images/hero-food.jpg`],
+    images: [`${SITE_URL}/images/og-image.jpg`],
   },
 };
 

@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${SITE_URL}/images/hero-food.jpg`,
-        secureUrl: `${SITE_URL}/images/hero-food.jpg`,
+        url: `${SITE_URL}/images/og-image.jpg`,
+        secureUrl: `${SITE_URL}/images/og-image.jpg`,
         width: 1200,
         height: 630,
         type: "image/jpeg",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Master Burger Point Full Menu & Deals | Kasur",
     description:
       "Kasur's Oldest Burger Shop: Special Master Burger, Bun Plaster, Shawarma & Late Night Food.",
-    images: [`${SITE_URL}/images/hero-food.jpg`],
+    images: [`${SITE_URL}/images/og-image.jpg`],
   },
 };
 
