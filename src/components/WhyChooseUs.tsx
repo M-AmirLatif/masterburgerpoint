@@ -5,51 +5,51 @@ import { Truck, Moon, HeartHandshake, Users, Award, ShieldCheck, Flame } from "l
 
 const FEATURES = [
   {
-    icon: Truck,
-    title: "Free Home Delivery",
-    desc: "Fast, insulated delivery right to your door in Kasur on all orders of Rs 700 or more. Your food arrives piping hot!",
-    badge: "Min Order Rs 700",
+    icon: Award,
+    title: "Kasur's Oldest Burger Shop",
+    desc: "A true landmark in Kasur city. Our veteran cooks have decades of authentic burger-making mastery passed down through generations.",
+    badge: "Decades of Heritage",
   },
   {
     icon: Moon,
-    title: "Open Till 3:00 AM",
-    desc: "Midnight cravings? We've got you covered. From 11:00 AM in the morning till 3:00 AM late night, every single day.",
+    title: "Open Till 4:00 AM Daily",
+    desc: "Late-night cravings? We've got you covered. From 12:00 PM noon right up to 4:00 AM midnight, 7 days a week.",
     badge: "16 Hours Daily",
   },
   {
     icon: Flame,
-    title: "Fresh, Juicy & 100% Halal",
-    desc: "Premium quality beef smashed to order, proprietary injected broast marinade, and 100% real pull mozzarella cheese.",
-    badge: "Chef Quality",
+    title: "100% Halal, Fresh & Handcrafted",
+    desc: "Special Master Burgers, Kasuri Bun Plaster, crispy Zinger, tender mutton & beef patties, and fresh chicken shawarma.",
+    badge: "Master Taste",
   },
   {
-    icon: Users,
-    title: "Great For Groups & Kids",
-    desc: "Spacious casual family dining at Cinema Morr, Kasur. Free street parking, friendly staff, and quick service.",
-    badge: "Family Favorite",
+    icon: Truck,
+    title: "Dine-in, Takeout & Delivery",
+    desc: "Conveniently located at Chandni Chowk, Railway Road, near Raja Centre. Grab a quick bite, take away, or order home delivery.",
+    badge: "Fast Service",
   },
 ];
 
 const STATS = [
   {
-    value: "5.0 ★",
+    value: "4.1 ★",
     label: "Google Rating",
-    detail: "Top rated fast food hub in Kasur",
+    detail: "Loved by Kasur foodies & local guides",
   },
   {
-    value: "11 AM – 3 AM",
-    label: "Daily Hours",
-    detail: "Serving lunch, dinner & late night",
+    value: "12 PM – 4 AM",
+    label: "Operating Hours",
+    detail: "Open late night till 4:00 AM daily",
   },
   {
-    value: "40+",
+    value: "50+",
     label: "Menu Varieties",
-    detail: "Burgers, pizzas, broast & pasta",
+    detail: "Burgers, shawarma, rolls & sandwiches",
   },
   {
-    value: "Rs 700",
-    label: "Free Delivery",
-    detail: "On all qualifying orders in Kasur",
+    value: "Oldest",
+    label: "Fast Food Point",
+    detail: "Decades of authentic cooking heritage",
   },
 ];
 
@@ -61,13 +61,13 @@ export function WhyChooseUs() {
         <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-10 space-y-2 sm:space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF5D9] border border-[#FFC20E] text-xs font-black text-[#8B1A1A] uppercase tracking-wider">
             <Award className="w-3.5 h-3.5 text-[#FFC20E] fill-[#FFC20E]" />
-            <span>The Cheezy Bite Promise</span>
+            <span>The Master Burger Point Promise</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display text-[#141414] leading-tight">
-            Why Kasur Loves Cheezy Bite
+            Why Kasur Loves Master Burger Point
           </h2>
           <p className="text-sm sm:text-base text-[#5C4E4B]">
-            We set a high benchmark for taste, portion size, and hospitality. Here is what makes our kitchen the talk of the town!
+            From our legendary Bun Plaster and Special Master Burger to freshly rolled shawarmas and club sandwiches, taste the legacy that Kasuris swear by!
           </p>
         </div>
 

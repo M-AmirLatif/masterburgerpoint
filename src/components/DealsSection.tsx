@@ -15,11 +15,11 @@ export function DealsSection() {
   const handleShareDeal = async (deal: DealItem, e: React.MouseEvent) => {
     e.stopPropagation();
     const url = typeof window !== "undefined" ? `${window.location.origin}/#deals` : `${SITE_URL}/#deals`;
-    const text = `Check out ${deal.title} at Cheezy Bite Kasur! 🔥 ${deal.description} — Only Rs ${deal.price}:`;
+    const text = `Check out ${deal.title} at Master Burger Point Kasur! 🍔 ${deal.description} — Only Rs ${deal.price}:`;
 
     if (navigator.share) {
       try {
-        await navigator.share({ title: `${deal.title} | Cheezy Bite Kasur`, text, url });
+        await navigator.share({ title: `${deal.title} | Master Burger Point Kasur`, text, url });
         return;
       } catch {
         // Fallback
@@ -29,7 +29,7 @@ export function DealsSection() {
     if (navigator.clipboard) {
       try {
         await navigator.clipboard.writeText(`${text} ${url}`);
-        showToast(`Copied ${deal.title} link! Share it in any chat 🧀`);
+        showToast(`Copied ${deal.title} link! Share it in any chat 🍔`);
         return;
       } catch {
         // Fallback
@@ -54,19 +54,19 @@ export function DealsSection() {
 
   return (
     <section id="deals" className="py-8 sm:py-16 md:py-20 bg-[#FFF5D9]/70 relative overflow-hidden">
-      {/* Decorative Cheese Wave Divider Top */}
+      {/* Decorative Warm Wave Divider Top */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-10 space-y-2 sm:space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#8B1A1A] text-[#FFF6DC] text-xs font-black uppercase tracking-wider shadow">
             <Tag className="w-3.5 h-3.5 text-[#FFC20E]" />
-            <span>Mega Savings • Wah G Wah Deals</span>
+            <span>Mega Savings • Master Value Deals</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display text-[#141414] leading-tight">
             Special Value Combo Deals
           </h2>
           <p className="text-sm sm:text-base text-[#5C4E4B]">
-            Hand-picked combinations offering unbeatable value for solo cravers, couples, and grand family feasts. All deals qualify for free home delivery over Rs 700!
+            Hand-picked combinations offering unbeatable value for solo diners, friends, and family gatherings. Prepared fresh by Kasur&apos;s oldest master cooks!
           </p>
         </div>
 

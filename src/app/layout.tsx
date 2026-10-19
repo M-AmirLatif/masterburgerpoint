@@ -30,23 +30,24 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Cheezy Bite | Best Fast Food in Kasur - Smash Burgers, Pizza & Broast",
+  title: "Master Burger Point | The Oldest & Best Burger Shop in Kasur",
   description:
-    "Lets Eat Together! Wah G Wah. Savor juicy Beef Smash Burgers, Crispy Injected Broast, Chicago Deep Dish Pizza & Loaded Fries in Kasur. Dine-in, Takeaway & Free Delivery above Rs 700. Open daily 11 AM - 3 AM.",
+    "Master Burger Point (ماسٹر برگر پوائنٹ) — Kasur's oldest and most famous burger spot on Railway Road, Chandni Chowk. Famous for Special Master Burgers, Bun Plaster, Zinger, Chicken Shawarma, Paratha Rolls & Club Sandwiches. Dine-in, Takeout & Delivery till 4 AM.",
   keywords: [
-    "Cheezy Bite",
-    "Cheezy Bite Kasur",
-    "Fast Food Kasur",
-    "Smash Burger Kasur",
-    "Injected Broast Kasur",
-    "Deep Dish Pizza Kasur",
-    "Cinema Morr Kasur restaurant",
-    "Late night food delivery Kasur",
-    "Wah G Wah fast food",
+    "Master Burger Point",
+    "Master Burger Kasur",
+    "Oldest Burger Shop in Kasur",
+    "Best Burger in Kasur",
+    "Bun Plaster Kasur",
+    "Railway Road Kasur food",
+    "Chandni Chowk Kasur burger",
+    "Zinger Burger Kasur",
+    "Shawarma Kasur",
+    "Late night delivery Kasur 4 AM",
   ],
-  authors: [{ name: "Cheezy Bite" }],
-  creator: "Cheezy Bite",
-  publisher: "Cheezy Bite",
+  authors: [{ name: "Master Burger Point" }],
+  creator: "Master Burger Point",
+  publisher: "Master Burger Point",
   formatDetection: {
     telephone: true,
     address: true,
@@ -58,29 +59,29 @@ export const metadata: Metadata = {
     apple: "/favicon.svg",
   },
   openGraph: {
-    title: "Cheezy Bite | Best Fast Food in Kasur - Wah G Wah!",
+    title: "Master Burger Point | The Oldest & Best Burger Shop in Kasur",
     description:
-      "Lets Eat Together! Wah G Wah. Authentic Beef Smash Burgers, Injected Broast & Cheesy Pizzas in Kasur. Open daily 11 AM to 3 AM. Free Delivery over Rs 700.",
+      "Kasur's legendary burger destination on Railway Road! Special Master Burger, Bun Plaster, Zinger, Shawarma, Club Sandwiches & Injected Broast. Open daily 12 PM till 4 AM.",
     url: SITE_URL,
-    siteName: "Cheezy Bite",
+    siteName: "Master Burger Point",
     locale: "en_PK",
     type: "website",
     images: [
       {
-        url: `${SITE_URL}/images/og-image.jpg`,
-        secureUrl: `${SITE_URL}/images/og-image.jpg`,
+        url: `${SITE_URL}/images/hero-food.jpg`,
+        secureUrl: `${SITE_URL}/images/hero-food.jpg`,
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "Cheezy Bite Gourmet Fast Food Spread — Smash Burgers, Pizza & Broast in Kasur",
+        alt: "Master Burger Point Kasur — Special Burgers, Shawarma & Fast Food Spread",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cheezy Bite Kasur | Wah G Wah!",
-    description: "Smash Burgers, Injected Broast, Chicago Deep Dish Pizza & Late Night Delivery.",
-    images: [`${SITE_URL}/images/og-image.jpg`],
+    title: "Master Burger Point Kasur | The Oldest Burger Shop",
+    description: "Special Master Burgers, Bun Plaster, Shawarma & Late-Night Delivery till 4 AM.",
+    images: [`${SITE_URL}/images/hero-food.jpg`],
   },
 };
 
@@ -93,15 +94,16 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "FastFoodRestaurant",
     name: RESTAURANT_INFO.name,
+    alternateName: RESTAURANT_INFO.urduName,
     image: `${SITE_URL}/images/hero-food.jpg`,
     "@id": SITE_URL,
     url: SITE_URL,
     telephone: RESTAURANT_INFO.phonePrimary,
-    servesCuisine: ["Fast Food", "Burgers", "Pizza", "Broast", "Shawarma"],
+    servesCuisine: ["Fast Food", "Burgers", "Shawarma", "Sandwiches", "Broast", "Pakistani Fast Food"],
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Cinema Morr, Near Ranger School, M.A Jinah Rd, Qadirabad",
+      streetAddress: "Chandni Chowk, Railway Road, near Raja Centre",
       addressLocality: "Kasur",
       addressRegion: "Punjab",
       addressCountry: "PK",
@@ -109,8 +111,8 @@ export default function RootLayout({
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 31.1172,
-      longitude: 74.4533,
+      latitude: 31.1165,
+      longitude: 74.4485,
     },
     openingHoursSpecification: [
       {
@@ -124,14 +126,14 @@ export default function RootLayout({
           "Saturday",
           "Sunday",
         ],
-        opens: "11:00",
-        closes: "03:00",
+        opens: "12:00",
+        closes: "04:00",
       },
     ],
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "142",
+      ratingValue: "4.1",
+      reviewCount: "24",
       bestRating: "5",
       worstRating: "1",
     },
@@ -154,14 +156,14 @@ export default function RootLayout({
     <html lang="en" className={`${lilita.variable} ${plusJakarta.variable}`}>
       <head>
         {/* Chat / WhatsApp / Social Crawlers Static Fallbacks */}
-        <meta property="og:image" content={`${SITE_URL}/images/og-image.jpg`} />
-        <meta property="og:image:secure_url" content={`${SITE_URL}/images/og-image.jpg`} />
+        <meta property="og:image" content={`${SITE_URL}/images/hero-food.jpg`} />
+        <meta property="og:image:secure_url" content={`${SITE_URL}/images/hero-food.jpg`} />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Cheezy Bite Kasur - Smash Burgers, Injected Broast & Deep Dish Pizza" />
-        <meta name="twitter:image" content={`${SITE_URL}/images/og-image.jpg`} />
-        <link rel="image_src" href={`${SITE_URL}/images/og-image.jpg`} />
+        <meta property="og:image:alt" content="Master Burger Point Kasur - The Oldest & Best Burger Shop" />
+        <meta name="twitter:image" content={`${SITE_URL}/images/hero-food.jpg`} />
+        <link rel="image_src" href={`${SITE_URL}/images/hero-food.jpg`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

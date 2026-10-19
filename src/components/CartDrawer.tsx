@@ -78,7 +78,7 @@ export function CartDrawer() {
                         {items.reduce((acc, i) => acc + i.quantity, 0)} items
                       </span>
                     </h2>
-                    <p className="text-xs text-white/80 font-medium">Cheezy Bite • Cinema Morr, Kasur</p>
+                    <p className="text-xs text-white/80 font-medium">Master Burger Point • Railway Road, Kasur</p>
                   </div>
                 </div>
                 <button
@@ -250,7 +250,7 @@ export function CartDrawer() {
                       type="text"
                       placeholder={
                         orderType === "delivery"
-                          ? "e.g. House #12, Street 3, Near Cinema Morr"
+                          ? "e.g. House #12, Street 3, Near Chandni Chowk"
                           : "e.g. Packing as takeaway, pick up in 20 mins"
                       }
                       value={customerAddress}
@@ -298,7 +298,7 @@ export function CartDrawer() {
                   </a>
 
                   <div className="flex items-center justify-between text-[11px] text-gray-500 pt-1">
-                    <span>Direct WhatsApp: 0321-6610034</span>
+                    <span>Direct WhatsApp: {RESTAURANT_INFO.phonePrimary}</span>
                     <button
                       onClick={clearCart}
                       className="text-red-600 hover:underline cursor-pointer"

@@ -30,8 +30,8 @@ export function Navbar() {
   const handleShare = async () => {
     const shareUrl = typeof window !== "undefined" ? window.location.href : SITE_URL;
     const shareData = {
-      title: "Cheezy Bite | Best Fast Food in Kasur — Wah G Wah!",
-      text: "Check out Cheezy Bite Kasur! Savor Beef Smash Burgers, Injected Broast & Deep Dish Pizza 🧀🍔",
+      title: "Master Burger Point | The Oldest & Best Burger Shop in Kasur",
+      text: "Check out Master Burger Point Kasur! Savor Special Master Burger, Bun Plaster, Zinger, Shawarma & Club Sandwiches 🍔🔥",
       url: shareUrl,
     };
 
@@ -48,7 +48,7 @@ export function Navbar() {
       try {
         await navigator.clipboard.writeText(shareUrl);
         setCopied(true);
-        showToast("Link copied to clipboard! Paste in any chat to view the preview 🧀");
+        showToast("Link copied to clipboard! Paste in any chat to view the preview 🍔");
         setTimeout(() => setCopied(false), 2500);
         return;
       } catch {
@@ -95,7 +95,7 @@ export function Navbar() {
             <Link
               href="/"
               className="flex items-center gap-2 group transition-transform active:scale-95"
-              aria-label="Cheezy Bite Home"
+              aria-label="Master Burger Point Home"
             >
               <div
                 className="relative w-44 sm:w-52 h-11 sm:h-12"
@@ -103,7 +103,7 @@ export function Navbar() {
               >
                 <Image
                   src="/logo.svg"
-                  alt="Cheezy Bite — Lets Eat Together! Wah G Wah"
+                  alt="Master Burger Point — Kasur's Oldest Burger Shop"
                   fill
                   priority
                   className="object-contain"
@@ -139,7 +139,7 @@ export function Navbar() {
                     status.isOpen ? "bg-emerald-500 animate-pulse" : "bg-amber-500"
                   }`}
                 />
-                <span>{status.badgeLabel} • Closes 3 AM</span>
+                <span>{status.badgeLabel} • Closes 4 AM</span>
               </div>
 
               {/* Cart Drawer Trigger */}
@@ -165,7 +165,7 @@ export function Navbar() {
               <button
                 onClick={handleShare}
                 className="relative p-2.5 rounded-xl bg-white hover:bg-[#FFF5D9] text-[#8B1A1A] transition-all transform active:scale-95 cursor-pointer flex items-center gap-1.5 border border-[#8B1A1A]/15 shadow-sm"
-                aria-label="Share Cheezy Bite link on WhatsApp or chat"
+                aria-label="Share Master Burger Point link on WhatsApp or chat"
                 title="Share link on WhatsApp or chat"
               >
                 {copied ? (
@@ -232,9 +232,9 @@ export function Navbar() {
               <div className="flex items-center justify-between p-3 rounded-xl bg-[#FFF5D9] border border-[#FFC20E]/40 text-xs font-bold text-[#8B1A1A]">
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>{status.badgeLabel} • Closes 3:00 AM</span>
+                  <span>{status.badgeLabel} • Closes 4:00 AM</span>
                 </div>
-                <span className="text-[11px] text-[#630F0F]">Free Delivery &gt; Rs 700</span>
+                <span className="text-[11px] text-[#630F0F]">Fast Delivery</span>
               </div>
 
               {/* Navigation Links */}

@@ -23,10 +23,10 @@ export function GallerySection() {
             <span>Feast For Your Eyes</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display text-[#141414] leading-tight">
-            Cheezy Bite Visual Gallery
+            Master Burger Point Visual Gallery
           </h2>
           <p className="text-sm sm:text-base text-[#5C4E4B]">
-            A peek inside our kitchen, savory cheese pulls, sizzling grills, and lively family gatherings at Cinema Morr, Kasur.
+            A peek inside our kitchen, sizzling grills, authentic burger preparation, and official menu cards at Railway Road, Kasur.
           </p>
         </div>
 

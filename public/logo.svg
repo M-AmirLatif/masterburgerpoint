@@ -5,7 +5,7 @@
     </filter>
   </defs>
 
-  <!-- Left: Black Circular Mascot Emblem (Matches the official Cheezy Bite menu badge) -->
+  <!-- Left: Black Circular Mascot Emblem (Chef & Burger) -->
   <g transform="translate(6, 4)">
     <!-- Outer Black Circle -->
     <circle cx="36" cy="36" r="36" fill="#141414" stroke="#FFC20E" stroke-width="2.5" />
@@ -51,77 +51,43 @@
     <line x1="36.5" y1="45" x2="36.5" y2="41" stroke="#FDE047" stroke-width="1" />
     <line x1="38" y1="45" x2="38" y2="42.5" stroke="#FDE047" stroke-width="1" />
 
-    <!-- Small curved banner at bottom of mascot circle -->
+    <!-- Curved banner at bottom -->
     <path d="M16 57 C22 62 48 62 56 57 L54 64 C46 68 24 68 18 64 Z" fill="#8B1A1A" stroke="#FFC20E" stroke-width="0.8" />
-    <text x="36" y="62.5" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="5" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">EST. KASUR</text>
+    <text x="36" y="62.5" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="5" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">KASUR</text>
   </g>
 
-  <!-- Right: Official Hand-lettered Style "Cheezy Bite" with Chef Hat, Pizza Slice, and Fork -->
+  <!-- Right: Wordmark "Master Burger Point" -->
   <g transform="translate(86, 0)">
-    <!-- Chef Hat on top left of C -->
-    <g transform="translate(4, 3) rotate(-12) scale(0.68)">
-      <path d="M8 18 C3 17 1 12 4 8 C6 2 14 2 17 5 C21 0 29 1 31 5 C36 2 43 4 43 9 C45 15 41 18 36 18 Z" fill="#141414" />
-      <path d="M8 18 L36 18 L34 23 L10 23 Z" fill="#141414" />
-      <circle cx="15" cy="10" r="1.5" fill="#FFC20E" />
-      <circle cx="23" cy="8" r="1.5" fill="#FFC20E" />
-      <circle cx="30" cy="11" r="1.5" fill="#FFC20E" />
+    <!-- Crown icon on Master -->
+    <g transform="translate(4, 6) scale(0.65)">
+      <path d="M2 14 L7 4 L14 10 L21 4 L26 14 Z" fill="#FFC20E" stroke="#8B1A1A" stroke-width="1.2" />
+      <circle cx="2" cy="14" r="1.5" fill="#8B1A1A" />
+      <circle cx="7" cy="4" r="1.5" fill="#8B1A1A" />
+      <circle cx="14" cy="10" r="1.5" fill="#8B1A1A" />
+      <circle cx="21" cy="4" r="1.5" fill="#8B1A1A" />
+      <circle cx="26" cy="14" r="1.5" fill="#8B1A1A" />
     </g>
 
-    <!-- Smiling Pizza Slice with Cheese Pull above the 'z'/'y' -->
-    <g transform="translate(112, 5) scale(0.65)">
-      <!-- Crust -->
-      <path d="M4 10 C12 6 24 6 32 10 L28 14 C22 11 14 11 8 14 Z" fill="#141414" />
-      <!-- Slice Body -->
-      <path d="M8 14 L28 14 L18 36 Z" fill="#141414" />
-      <!-- Pepperoni & Face details -->
-      <circle cx="15" cy="18" r="2.5" fill="#FFC20E" />
-      <circle cx="21" cy="22" r="2" fill="#FFC20E" />
-      <circle cx="16" cy="26" r="1.5" fill="#FFC20E" />
-      <!-- Cheese Drip from slice tip -->
-      <path d="M18 36 C17 39 17 42 19 44 C20 42 20 39 19 36 Z" fill="#141414" />
-    </g>
-
-    <!-- Wordmark "Cheezy" in bold dripping fast-food display font -->
-    <text x="6" y="44" font-family="'Lilita One', 'Impact', cursive" font-size="38" font-weight="900" fill="#141414" letter-spacing="-0.5">
-      Cheezy
+    <!-- Wordmark "MASTER" -->
+    <text x="26" y="36" font-family="'Lilita One', 'Impact', cursive" font-size="34" font-weight="900" fill="#141414" letter-spacing="0.5">
+      MASTER
     </text>
 
-    <!-- Wordmark "Bite" with cheese drips -->
-    <text x="32" y="68" font-family="'Lilita One', 'Impact', cursive" font-size="28" font-weight="900" fill="#8B1A1A" letter-spacing="1">
-      Bite
+    <!-- Wordmark "BURGER POINT" -->
+    <text x="26" y="58" font-family="'Lilita One', 'Impact', cursive" font-size="22" font-weight="900" fill="#8B1A1A" letter-spacing="0.8">
+      BURGER POINT
     </text>
 
-    <!-- Cheese Drips hanging from "Cheezy" -->
-    <!-- Drip under C -->
-    <path d="M14 43 C14 48 12 51 13.5 53 C15 51 16 48 16 43 Z" fill="#141414" />
-    <path d="M20 43 C20 49 18 53 19.5 55 C21 53 22 49 22 43 Z" fill="#141414" />
-    <!-- Drip under h & e -->
-    <path d="M44 43 C44 47 43 49 44 51 C45 49 46 47 46 43 Z" fill="#141414" />
-    <path d="M68 43 C68 49 66 52 67.5 54 C69 52 70 49 70 43 Z" fill="#141414" />
-    <path d="M86 43 C86 48 85 51 86 53 C87 51 88 48 88 43 Z" fill="#141414" />
-
-    <!-- Cheese Drips hanging from "Bite" -->
-    <path d="M48 68 C48 73 47 75 48 77 C49 75 50 73 50 68 Z" fill="#8B1A1A" />
-    <path d="M72 68 C72 74 71 76 72.5 78 C74 76 75 74 75 68 Z" fill="#8B1A1A" />
-
-    <!-- Fork extension originating from the tail of 'y' / wordmark -->
-    <g transform="translate(132, 44)">
-      <!-- Fork handle curve -->
-      <path d="M-6 -4 C10 -4 16 2 28 6 L52 7" stroke="#141414" stroke-width="3" stroke-linecap="round" fill="none" />
-      <!-- Fork head -->
-      <path d="M52 4 C55 4 58 5 60 7 C58 9 55 10 52 10 Z" fill="#141414" />
-      <!-- Fork prongs -->
-      <line x1="60" y1="4" x2="68" y2="4" stroke="#141414" stroke-width="1.8" stroke-linecap="round" />
-      <line x1="60" y1="6" x2="69" y2="6" stroke="#141414" stroke-width="1.8" stroke-linecap="round" />
-      <line x1="60" y1="8" x2="69" y2="8" stroke="#141414" stroke-width="1.8" stroke-linecap="round" />
-      <line x1="60" y1="10" x2="68" y2="10" stroke="#141414" stroke-width="1.8" stroke-linecap="round" />
-      <!-- Drips from fork line -->
-      <path d="M12 2 C12 6 11 8 12.5 10 C13.5 8 14 6 14 2 Z" fill="#141414" />
+    <!-- Burger icon next to Burger Point -->
+    <g transform="translate(182, 42) scale(0.7)">
+      <path d="M2 10 C2 4 18 4 18 10 Z" fill="#FFC20E" stroke="#8B1A1A" stroke-width="1.2" />
+      <rect x="1.5" y="10" width="17" height="3" rx="1" fill="#8B1A1A" />
+      <path d="M2 13 C2 16 18 16 18 13 Z" fill="#F59E0B" stroke="#8B1A1A" stroke-width="1" />
     </g>
 
-    <!-- Tagline underneath in authentic script style with bold contrast -->
-    <text x="100" y="74" font-family="'Plus Jakarta Sans', cursive, sans-serif" font-style="italic" font-weight="900" font-size="10" fill="#8B1A1A" letter-spacing="0.4">
-      Lets Eat Together! Wah G Wah
+    <!-- Subtitle: Oldest Shop in Kasur -->
+    <text x="26" y="72" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="8.5" fill="#5C4E4B" letter-spacing="0.4">
+      THE OLDEST &amp; BEST BURGER SHOP IN KASUR
     </text>
   </g>
 </svg>

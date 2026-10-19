@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin, Phone, Send, Clock, Navigation, CheckCircle, Car } from "lucide-react";
+import { MapPin, Phone, Send, Clock, Navigation, CheckCircle } from "lucide-react";
 import { RESTAURANT_INFO } from "@/data/menu";
 
 export function ContactSection() {
@@ -17,7 +17,7 @@ export function ContactSection() {
             Location, Hours &amp; Contact
           </h2>
           <p className="text-sm sm:text-base text-[#5C4E4B]">
-            Dine-in with family and friends at Cinema Morr, Kasur or call us for lightning-fast home delivery till 3:00 AM!
+            Visit Master Burger Point at Chandni Chowk, Railway Road, Kasur or order fast late-night delivery till 4:00 AM!
           </p>
         </div>
 
@@ -65,7 +65,7 @@ export function ContactSection() {
                     <Send className="w-5 h-5 fill-white text-white" />
                   </div>
                   <div className="text-left">
-                    <p className="text-[11px] uppercase tracking-wider font-extrabold text-emerald-100">Fast WhatsApp Order</p>
+                    <p className="text-[11px] uppercase tracking-wider font-extrabold text-emerald-100">WhatsApp Order</p>
                     <p className="text-sm font-black text-white font-mono">{RESTAURANT_INFO.phonePrimary}</p>
                   </div>
                 </div>
@@ -74,7 +74,7 @@ export function ContactSection() {
                 </span>
               </a>
 
-              {/* Two Direct Calling Buttons */}
+              {/* Direct Calling Buttons */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 {/* Phone 1 */}
                 <a
@@ -85,7 +85,7 @@ export function ContactSection() {
                     <Phone className="w-4 h-4 text-[#FFC20E]" />
                   </span>
                   <div className="text-left">
-                    <span className="block text-[10px] font-black uppercase tracking-wider text-[#8B1A1A]">Line 1 (WhatsApp)</span>
+                    <span className="block text-[10px] font-black uppercase tracking-wider text-[#8B1A1A]">Hotline (Call &amp; WA)</span>
                     <span className="text-xs sm:text-sm font-black font-mono text-[#141414]">{RESTAURANT_INFO.phonePrimary}</span>
                   </div>
                 </a>
@@ -99,7 +99,7 @@ export function ContactSection() {
                     <Phone className="w-4 h-4 text-[#FFC20E]" />
                   </span>
                   <div className="text-left">
-                    <span className="block text-[10px] font-black uppercase tracking-wider text-[#8B1A1A]">Line 2 (PTCL / Direct)</span>
+                    <span className="block text-[10px] font-black uppercase tracking-wider text-[#8B1A1A]">Alternate Line</span>
                     <span className="text-xs sm:text-sm font-black font-mono text-[#141414]">{RESTAURANT_INFO.phoneSecondary}</span>
                   </div>
                 </a>
@@ -114,31 +114,31 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h3 className="text-sm sm:text-base font-bold text-[#141414]">Operating Schedule</h3>
-                  <p className="text-xs text-[#5C4E4B]">Open 7 Days a Week</p>
+                  <p className="text-xs text-[#5C4E4B]">Open 7 Days a Week • Closes 4 AM</p>
                 </div>
               </div>
 
               <div className="space-y-2.5 text-xs divide-y divide-gray-100">
                 <div className="flex justify-between items-center pt-2">
                   <span className="font-semibold text-gray-700">Monday – Sunday</span>
-                  <span className="font-extrabold text-[#8B1A1A]">11:00 AM – 3:00 AM</span>
+                  <span className="font-extrabold text-[#8B1A1A]">12:00 PM – 4:00 AM</span>
                 </div>
                 <div className="flex justify-between items-center pt-2.5">
                   <span className="font-semibold text-gray-700">Home Delivery Hours</span>
                   <span className="font-extrabold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
-                    11:00 AM – 3:00 AM
+                    12:00 PM – 4:00 AM
                   </span>
                 </div>
                 <div className="flex justify-between items-center pt-2.5">
-                  <span className="font-semibold text-gray-700">Free Delivery</span>
+                  <span className="font-semibold text-gray-700">Fast Delivery</span>
                   <span className="font-extrabold text-[#141414] bg-[#FFF5D9] px-2 py-0.5 rounded-md border border-[#FFC20E]/50">
-                    Orders of Rs 700+
+                    Dine-in • Takeout • Delivery
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Restaurant Features Grid (Clean 2-column layout on all mobile screens) */}
+            {/* Restaurant Features Grid */}
             <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
               {RESTAURANT_INFO.features.map((feat, idx) => (
                 <div
@@ -157,8 +157,8 @@ export function ContactSection() {
             <div className="bg-white rounded-3xl p-3 sm:p-4 border border-[#8B1A1A]/10 shadow-xl overflow-hidden">
               <div className="relative w-full h-[380px] sm:h-[450px] rounded-2xl overflow-hidden bg-gray-100">
                 <iframe
-                  title="Cheezy Bite Kasur Cinema Morr Google Map"
-                  src="https://maps.google.com/maps?q=Cheezy%20Bite%20Cinema%20Morr%20Kasur&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                  title="Master Burger Point Kasur Railway Road Google Map"
+                  src={RESTAURANT_INFO.googleMapEmbedUrl}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -172,8 +172,8 @@ export function ContactSection() {
               {/* Map Footer Bar */}
               <div className="p-3 sm:p-4 flex flex-col sm:flex-row items-center justify-between gap-3">
                 <div className="text-center sm:text-left">
-                  <p className="text-xs font-bold text-[#141414]">Cinema Morr, Near Ranger School</p>
-                  <p className="text-[11px] text-[#5C4E4B]">M.A Jinah Rd, Qadirabad, Kasur</p>
+                  <p className="text-xs font-bold text-[#141414]">Chandni Chowk, Railway Road</p>
+                  <p className="text-[11px] text-[#5C4E4B]">Near Raja Centre, Kasur, 55050</p>
                 </div>
 
                 <a

@@ -8,14 +8,14 @@ import { useCartStore } from "@/lib/cartStore";
 import { MENU_ITEMS, MenuItem } from "@/data/menu";
 import { SITE_URL } from "@/lib/siteUrl";
 
-// Filter only the 6 featured signatures
+// Filter the 6 featured signatures from Master Burger Point
 const SIGNATURE_IDS = [
-  "beef-smash",
-  "injected-broast",
-  "deep-dish-pizza",
+  "special-master-burger",
+  "bun-plaster-burger",
   "zinger-burger",
-  "shawarma-cheezy-bite",
-  "fries-loaded",
+  "zinger-chicken-mix-platter",
+  "golu-molu-club-sandwich",
+  "injected-broast",
 ];
 
 export function BestSellers() {
@@ -26,11 +26,11 @@ export function BestSellers() {
   const handleShareItem = async (item: MenuItem, e: React.MouseEvent) => {
     e.stopPropagation();
     const url = typeof window !== "undefined" ? window.location.origin : SITE_URL;
-    const text = `Check out ${item.name} at Cheezy Bite Kasur! 🧀 ${item.description} — Only Rs ${item.price}:`;
+    const text = `Check out ${item.name} at Master Burger Point Kasur! 🍔 ${item.description} — Only Rs ${item.price}:`;
     
     if (navigator.share) {
       try {
-        await navigator.share({ title: `${item.name} | Cheezy Bite Kasur`, text, url });
+        await navigator.share({ title: `${item.name} | Master Burger Point Kasur`, text, url });
         return;
       } catch {
         // Fallback
@@ -40,7 +40,7 @@ export function BestSellers() {
     if (navigator.clipboard) {
       try {
         await navigator.clipboard.writeText(`${text} ${url}`);
-        showToast(`Copied ${item.name} link! Share it in any chat 🧀`);
+        showToast(`Copied ${item.name} link! Share it in any chat 🍔`);
         return;
       } catch {
         // Fallback
@@ -83,13 +83,13 @@ export function BestSellers() {
         <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-10 space-y-2 sm:space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF5D9] border border-[#FFC20E] text-xs font-black text-[#8B1A1A] uppercase tracking-wider">
             <Flame className="w-3.5 h-3.5 text-[#FFC20E] fill-[#FFC20E]" />
-            <span>Kasur&apos;s Most Wanted</span>
+            <span>Kasur&apos;s Legendary Tastes</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display text-[#141414] leading-tight">
-            Our Signatures &amp; Best Sellers
+            Famous Signatures &amp; Best Sellers
           </h2>
           <p className="text-sm sm:text-base text-[#5C4E4B]">
-            Hand-crafted with secret spice blends, molten cheese pulls, and premium ingredients. These are the crowd favorites you cannot miss.
+            Hand-crafted with traditional spices and decades of culinary heritage by Kasur&apos;s oldest burger point. These are the legendary favorites you cannot miss.
           </p>
         </div>
 

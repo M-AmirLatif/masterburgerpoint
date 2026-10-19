@@ -97,7 +97,7 @@ export const useCartStore = create<CartStore>()(
         const toastDesc = sizeName ? `${name} (${sizeName})` : name;
         set({
           items: updatedItems,
-          toast: `Added ${toastDesc} to your cart! 🧀`,
+          toast: `Added ${toastDesc} to your cart! 🍔`,
         });
 
         // Auto hide toast after 3s
@@ -170,7 +170,8 @@ export const useCartStore = create<CartStore>()(
 
         if (items.length === 0) return RESTAURANT_INFO.whatsappUrl;
 
-        let message = `*🧀 CHEEZY BITE ORDER — WAH G WAH! 🧀*\n`;
+        let message = `*🍔 MASTER BURGER POINT ORDER — KASUR 🍔*\n`;
+        message += `_The Oldest & Best Burger Shop in Kasur_\n`;
         message += `--------------------------------------\n`;
         message += `*Order Type:* ${orderType === "delivery" ? "🚀 Home Delivery" : "🛍️ Takeaway / Pickup"}\n\n`;
         message += `*ITEMS:*\n`;
@@ -186,7 +187,7 @@ export const useCartStore = create<CartStore>()(
         message += `\n--------------------------------------\n`;
         message += `*Subtotal:* Rs ${subtotal.toLocaleString()}\n`;
         if (orderType === "delivery") {
-          message += `*Delivery:* ${deliveryFee === 0 ? "FREE (Order >= Rs 700)" : `Rs ${deliveryFee}`}\n`;
+          message += `*Delivery:* ${deliveryFee === 0 ? "FREE (Order >= Rs 500)" : `Rs ${deliveryFee}`}\n`;
         }
         message += `*GRAND TOTAL: Rs ${finalTotal.toLocaleString()}*\n`;
         message += `--------------------------------------\n`;
@@ -197,7 +198,7 @@ export const useCartStore = create<CartStore>()(
           message += `*Customer Note:* Please share delivery address.\n\n`;
         }
 
-        message += `_Sent via Cheezy Bite Official Website: ${SITE_URL}_ 🌟`;
+        message += `_Sent via Master Burger Point Official Website_ 🌟`;
 
         return `https://wa.me/${RESTAURANT_INFO.whatsappNumber}?text=${encodeURIComponent(
           message
@@ -205,7 +206,7 @@ export const useCartStore = create<CartStore>()(
       },
     }),
     {
-      name: "cheezybite-cart-storage",
+      name: "masterburger-cart-storage",
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
         items: state.items,

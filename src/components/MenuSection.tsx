@@ -70,7 +70,7 @@ export function MenuSection() {
             Full Interactive Restaurant Menu
           </h2>
           <p className="text-sm sm:text-base text-[#5C4E4B]">
-            From flame-grilled smash burgers to authentic Chicago deep dish pizzas, every item is crafted with love. Dine-in, takeaway, or free home delivery above Rs 700!
+            From the legendary Special Master Burger and Bun Plaster to sizzling Shawarma platters and Club Sandwiches, every item is prepared fresh by Kasur&apos;s veteran master cooks.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export function MenuSection() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search burgers, pizzas, broast, pasta, fries..."
+              placeholder="Search burgers, shawarma, paratha rolls, sandwiches..."
               className="w-full pl-10 pr-10 py-2.5 rounded-full border border-[#8B1A1A]/20 bg-white text-xs sm:text-sm text-[#141414] placeholder-gray-400 focus:outline-none focus:border-[#8B1A1A] focus:ring-2 focus:ring-[#8B1A1A]/20 shadow-sm transition-all"
             />
             {searchQuery && (

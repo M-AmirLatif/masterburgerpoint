@@ -25,13 +25,13 @@ export function ReviewsSection() {
         <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-10 space-y-2 sm:space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#8B1A1A] text-[#FFF6DC] text-xs font-black uppercase tracking-wider shadow">
             <Star className="w-3.5 h-3.5 text-[#FFC20E] fill-[#FFC20E]" />
-            <span>5.0 Rating on Google</span>
+            <span>4.1 Rating on Google (24 Reviews)</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display text-[#141414] leading-tight">
             Loved By Food Lovers Across Kasur
           </h2>
           <p className="text-sm sm:text-base text-[#5C4E4B]">
-            Real feedback from our valued diners. Taste, hospitality, and quality you can always count on.
+            Authentic Google Reviews from Local Guides and loyal customers who celebrate Master Burger Point as Kasur&apos;s oldest burger landmark.
           </p>
         </div>
 
@@ -54,11 +54,6 @@ export function ReviewsSection() {
                 </div>
               )}
 
-              {rev.tag === "sample" && (
-                <div className="self-start bg-gray-100 text-gray-600 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider mb-2">
-                  Sample Testimonial
-                </div>
-              )}
 
               <div className="space-y-4">
                 {/* Star Rating */}

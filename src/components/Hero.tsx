@@ -15,14 +15,15 @@ import {
   Sparkles,
   Flame,
   Phone,
+  Award,
 } from "lucide-react";
 import { RESTAURANT_INFO } from "@/data/menu";
 
 const TYPEWRITER_WORDS = [
-  "Smash Burgers.",
-  "Injected Broast.",
-  "Cheesy Pizzas.",
-  "Wah G Wah!",
+  "Special Master Burger.",
+  "Bun Plaster Burger.",
+  "Zinger & Shawarma.",
+  "Kasur's Oldest Taste!",
 ];
 
 export function Hero() {
@@ -35,7 +36,7 @@ export function Hero() {
 
   const [status, setStatus] = useState({
     isOpen: true,
-    statusText: "Open Now • Closes 3:00 AM",
+    statusText: "Open Now • Closes 4:00 AM",
     badgeLabel: "Open Now",
   });
 
@@ -51,7 +52,7 @@ export function Hero() {
       className="relative pt-20 sm:pt-24 pb-8 sm:pb-16 overflow-hidden bg-gradient-to-b from-[#FFF5D9]/80 via-[#FFFDF7] to-[#FFFDF7]"
       aria-label="Hero Introduction"
     >
-      {/* Decorative Cheese Drip / Radiant Glow Backdrops */}
+      {/* Decorative Warm Backdrops */}
       <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#FFC20E]/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-40 right-10 w-[300px] h-[300px] bg-[#8B1A1A]/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -72,17 +73,17 @@ export function Hero() {
               >
                 <Image
                   src="/mascot-badge.svg"
-                  alt="Cheezy Bite Official Chef Mascot"
+                  alt="Master Burger Point Official Mascot"
                   fill
                   className="object-contain"
                 />
               </div>
               <div className="text-left">
                 <span className="block text-[11px] sm:text-xs font-black uppercase tracking-wider text-[#8B1A1A]">
-                  Official Restaurant • Cinema Morr, Kasur
+                  The Oldest Shop in Kasur • Railway Road
                 </span>
                 <span className="text-xs sm:text-sm font-extrabold text-[#141414] italic">
-                  &ldquo;Lets Eat Together! Wah G Wah&rdquo;
+                  &ldquo;Authentic Taste by Highly Experienced Master Cooks&rdquo;
                 </span>
               </div>
             </div>
@@ -98,30 +99,30 @@ export function Hero() {
                 }`}
               >
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-                <span>{status.badgeLabel} • Closes 3:00 AM</span>
+                <span>{status.badgeLabel} • Closes 4:00 AM</span>
               </div>
 
-              {/* 5.0 Google Rating Badge */}
+              {/* Real 4.1 Google Rating Badge */}
               <div className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-white border border-[#FFC20E] text-[11px] sm:text-xs font-bold text-[#141414] shadow-sm">
                 <Star className="w-3 h-3 fill-[#FFC20E] text-[#FFC20E] shrink-0" />
-                <span className="font-extrabold text-[#8B1A1A]">5.0</span>
-                <span className="text-[10px] sm:text-[11px] text-[#5C4E4B] font-semibold">(140+ Reviews)</span>
+                <span className="font-extrabold text-[#8B1A1A]">4.1</span>
+                <span className="text-[10px] sm:text-[11px] text-[#5C4E4B] font-semibold">(24 Google Reviews)</span>
               </div>
 
-              {/* Free Delivery Chip */}
+              {/* Service Chip */}
               <div className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-[#8B1A1A] text-[#FFF6DC] text-[11px] sm:text-xs font-bold shadow-sm">
                 <Truck className="w-3 h-3 text-[#FFC20E] shrink-0" />
-                <span>Free Delivery &gt; Rs 700</span>
+                <span>Dine-In • Takeout • Delivery</span>
               </div>
             </div>
 
             {/* Headline with Typewriter */}
             <div className="space-y-1 sm:space-y-2">
               <span className="block text-[11px] sm:text-sm md:text-base font-black tracking-wider text-[#8B1A1A] uppercase">
-                Kasur&apos;s Ultimate Fast Food Craving 🍔
+                Kasur&apos;s Legendary Burger Hub 🍔
               </span>
               <h1 className="text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-display text-[#141414] leading-[1.12] sm:leading-[1.08] tracking-tight">
-                Fresh, Crispy &amp; Juicy{" "}
+                Authentic, Fresh &amp; Famous{" "}
                 <span className="relative inline-block text-[#8B1A1A]">
                   <span className="text-[#8B1A1A] drop-shadow-sm">
                     {currentText}
@@ -136,10 +137,10 @@ export function Hero() {
             {/* Subtext */}
             <p className="text-xs sm:text-base md:text-lg text-[#2E1E1C] max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
               <span className="sm:hidden">
-                Kasur&apos;s home of juicy beef smash burgers, spicy injected broast, Chicago deep-dish pizzas &amp; loaded fries. Delivered piping hot till 3:00 AM!
+                Master Burger Point is the oldest burger shop in Kasur. Savor Special Master Burgers, Bun Plaster, Zinger, Shawarma &amp; Club Sandwiches. Open till 4:00 AM!
               </span>
               <span className="hidden sm:inline">
-                &quot;Lets Eat Together! Wah G Wah&quot; — Savor 100% pure beef smash burgers with crispy lacy edges, spicy injected broast, Chicago deep-dish pizzas, and loaded fries at Cinema Morr, Kasur. Dine-in, takeout, or delivered piping hot to your doorstep!
+                &ldquo;The Oldest Burger Shop in Kasur&rdquo; — Made by veteran cooks with decades of culinary heritage. Feast on our Special Master Burger, Bun Plaster, crispy Zinger, sizzling Shawarma platters, and loaded fries at Chandni Chowk, Railway Road, Kasur. Open daily till 4:00 AM!
               </span>
             </p>
 
@@ -152,7 +153,7 @@ export function Hero() {
                 className="w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20BD5A] text-white font-extrabold text-xs sm:text-base flex items-center justify-center gap-2 shadow-lg shadow-[#25D366]/25 transition-all active:scale-95 cursor-pointer border border-white/20"
               >
                 <Send className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-white shrink-0" />
-                <span>WhatsApp</span>
+                <span>WhatsApp Order</span>
               </a>
 
               <Link
@@ -168,7 +169,7 @@ export function Hero() {
             <div className="flex items-center justify-center lg:justify-start pt-1">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 border border-[#8B1A1A]/15 text-[11px] sm:text-xs font-bold text-[#5C4E4B] shadow-sm">
                 <Phone className="w-3.5 h-3.5 text-[#8B1A1A] shrink-0" />
-                <span>Direct Order:</span>
+                <span>Call Hotline:</span>
                 <a
                   href={`tel:${RESTAURANT_INFO.phonePrimary}`}
                   className="text-[#8B1A1A] font-black hover:underline font-mono"
@@ -176,7 +177,7 @@ export function Hero() {
                   {RESTAURANT_INFO.phonePrimary}
                 </a>
                 <span className="text-gray-300">•</span>
-                <span className="text-gray-600">Cinema Morr, Kasur</span>
+                <span className="text-gray-600">Railway Road, Kasur</span>
               </div>
             </div>
           </motion.div>
@@ -188,7 +189,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
             className="lg:col-span-5 relative"
           >
-            {/* Decorative Cheese Ring Badge */}
+            {/* Visual Media Card */}
             <div className="relative mx-auto max-w-[480px] lg:max-w-none">
               <div
                 className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-[#FFF5D9] bg-white group"
@@ -196,7 +197,7 @@ export function Hero() {
               >
                 <Image
                   src="/images/hero-food.jpg"
-                  alt="Cheezy Bite signature feast: Beef Smash Burger, Injected Broast, Deep Dish Pizza and Loaded Fries"
+                  alt="Master Burger Point signature burgers, chicken shawarma, fries and starters spread"
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -207,11 +208,11 @@ export function Hero() {
                 {/* Bottom caption overlay */}
                 <div className="absolute bottom-4 left-4 right-4 p-3 rounded-2xl bg-black/60 backdrop-blur-md text-white border border-white/20 flex items-center justify-between">
                   <div>
-                    <p className="text-xs font-display text-[#FFC20E]">CHEEZY BITE SIGNATURES</p>
-                    <p className="text-[11px] text-white/90 font-medium">Smash Burger • Injected Broast • Deep Dish</p>
+                    <p className="text-xs font-display text-[#FFC20E]">MASTER BURGER POINT</p>
+                    <p className="text-[11px] text-white/90 font-medium">Special Master Burger • Bun Plaster • Shawarma</p>
                   </div>
                   <span className="px-2.5 py-1 rounded-full bg-[#FFC20E] text-[#8B1A1A] text-[11px] font-black">
-                    Wah G Wah!
+                    Est. Kasur
                   </span>
                 </div>
               </div>
@@ -223,11 +224,11 @@ export function Hero() {
                 className="absolute -top-4 -right-2 sm:-right-4 bg-white px-3.5 py-2 rounded-2xl shadow-xl border-2 border-[#FFC20E] flex items-center gap-2"
               >
                 <div className="w-8 h-8 rounded-xl bg-[#FFF5D9] text-[#8B1A1A] flex items-center justify-center font-bold">
-                  🍗
+                  🍔
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase font-black text-[#8B1A1A]">Kasur&apos;s Specialty</p>
-                  <p className="text-xs font-extrabold text-[#141414]">Injected Broast</p>
+                  <p className="text-[10px] uppercase font-black text-[#8B1A1A]">Kasuri Specialty</p>
+                  <p className="text-xs font-extrabold text-[#141414]">Bun Plaster Burger</p>
                 </div>
               </motion.div>
 
@@ -238,11 +239,11 @@ export function Hero() {
                 className="absolute -bottom-4 -left-2 sm:-left-4 bg-[#8B1A1A] text-white px-3.5 py-2 rounded-2xl shadow-xl border-2 border-[#FFC20E] flex items-center gap-2"
               >
                 <div className="w-8 h-8 rounded-xl bg-[#FFC20E] text-[#8B1A1A] flex items-center justify-center font-bold">
-                  🍕
+                  ⭐
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase font-black text-[#FFC20E]">Chicago Style</p>
-                  <p className="text-xs font-extrabold text-white">7&quot; &amp; 10&quot; Deep Dish</p>
+                  <p className="text-[10px] uppercase font-black text-[#FFC20E]">Kasur&apos;s Heritage</p>
+                  <p className="text-xs font-extrabold text-white">Oldest Shop in Town</p>
                 </div>
               </motion.div>
             </div>

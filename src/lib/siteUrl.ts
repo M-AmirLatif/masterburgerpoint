@@ -14,7 +14,7 @@ export function getSiteUrl(): string {
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL}`;
   }
-  return "https://cheezybite-xi.vercel.app";
+  return "https://masterburgerpoint.vercel.app";
 }
 
 export const SITE_URL = getSiteUrl();

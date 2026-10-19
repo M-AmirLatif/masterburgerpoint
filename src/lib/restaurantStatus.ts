@@ -19,31 +19,31 @@ export function getRestaurantStatus(): RestaurantStatus {
     const minute = parseInt(parts.find((p) => p.type === "minute")?.value || "0", 10);
     const currentMinutes = hour * 60 + minute;
 
-    // Opening: 11:00 AM = 11 * 60 = 660 minutes
-    // Closing: 3:00 AM next day = 3 * 60 = 180 minutes
-    const isOpen = currentMinutes >= 660 || currentMinutes < 180;
+    // Opening: 12:00 PM = 12 * 60 = 720 minutes
+    // Closing: 4:00 AM next day = 4 * 60 = 240 minutes
+    const isOpen = currentMinutes >= 720 || currentMinutes < 240;
 
     if (isOpen) {
       return {
         isOpen: true,
-        statusText: "Open Now • Closes 3:00 AM",
+        statusText: "Open Now • Closes 4:00 AM",
         badgeLabel: "Open Now",
-        hoursDetail: "Serving Dine-in, Takeaway & Late-Night Delivery",
+        hoursDetail: "Serving Dine-in, Takeaway & Late-Night Delivery (Till 4 AM)",
       };
     } else {
       return {
         isOpen: false,
-        statusText: "Opens at 11:00 AM",
-        badgeLabel: "Opens 11:00 AM",
-        hoursDetail: "Accepting Advance Orders for 11 AM Delivery",
+        statusText: "Opens at 12:00 PM",
+        badgeLabel: "Opens 12:00 PM",
+        hoursDetail: "Accepting Advance Orders for 12 PM Delivery",
       };
     }
   } catch {
     return {
       isOpen: true,
-      statusText: "Open Now • Closes 3:00 AM",
+      statusText: "Open Now • Closes 4:00 AM",
       badgeLabel: "Open Now",
-      hoursDetail: "Dine-in, Takeaway & Delivery",
+      hoursDetail: "Dine-in, Takeout & Delivery (Till 4 AM)",
     };
   }
 }
