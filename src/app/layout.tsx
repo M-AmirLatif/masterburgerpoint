@@ -156,14 +156,14 @@ export default function RootLayout({
     <html lang="en" className={`${lilita.variable} ${plusJakarta.variable}`}>
       <head>
         {/* Chat / WhatsApp / Social Crawlers Static Fallbacks */}
-        <meta property="og:image" content={`${SITE_URL}/images/hero-food.jpg`} />
-        <meta property="og:image:secure_url" content={`${SITE_URL}/images/hero-food.jpg`} />
+        <meta property="og:image" content={`${SITE_URL}/images/og-image.jpg`} />
+        <meta property="og:image:secure_url" content={`${SITE_URL}/images/og-image.jpg`} />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Master Burger Point Kasur - The Oldest & Best Burger Shop" />
-        <meta name="twitter:image" content={`${SITE_URL}/images/hero-food.jpg`} />
-        <link rel="image_src" href={`${SITE_URL}/images/hero-food.jpg`} />
+        <meta name="twitter:image" content={`${SITE_URL}/images/og-image.jpg`} />
+        <link rel="image_src" href={`${SITE_URL}/images/og-image.jpg`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
