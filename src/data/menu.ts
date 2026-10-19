@@ -807,14 +807,19 @@ export const REVIEWS = [
 
 export const GALLERY_IMAGES = [
   {
+    title: "Air-Conditioned Family Dining Hall",
+    category: "Sitting Area",
+    image: "/images/sitting-area-1.jpg",
+  },
+  {
     title: "Special Master Burger",
     category: "House Signature",
     image: "/images/smash-burger.jpg",
   },
   {
-    title: "Master Kitchen Live Tawa Grilling",
-    category: "Kitchen & Chef",
-    image: "/images/gallery-chef.jpg",
+    title: "Cozy Dine-In Hall & Decor",
+    category: "Sitting Area",
+    image: "/images/sitting-area-2.jpg",
   },
   {
     title: "Crispy Golden Injected Broast",
@@ -822,9 +827,19 @@ export const GALLERY_IMAGES = [
     image: "/images/injected-broast.jpg",
   },
   {
+    title: "Evening Family Dining Seating",
+    category: "Sitting Area",
+    image: "/images/sitting-area-3.jpg",
+  },
+  {
     title: "Sizzling Shawarma & Chicken Platter",
     category: "Shawarma & Platters",
     image: "/images/gallery-platter.jpg",
+  },
+  {
+    title: "Master Kitchen Live Tawa Grilling",
+    category: "Kitchen & Chef",
+    image: "/images/gallery-chef.jpg",
   },
   {
     title: "Fiery Crispy Hot Wings",
